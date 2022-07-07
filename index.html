@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myFirstApp">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Hello Coursera</title>
 </head>
+
 <body>
-    <h1>Hello Coursera Students!</h1>
-    <p>sah dud</p>
+    <div ng-hide="true" ng-controller="MyFirstController">
+        <h1>My first AngularJs App</h1>
+        <!-- {{sayHello()}} -->
+        <input type="text" ng-model="name">
+        Inside my input is: {{name}}
+    </div>
+    <div ng-hide="true" ng-controller="NameCalculatorController">
+        <h1>Name Calculator</h1>
+        <div>
+            <div>
+                Your name:
+                <input type="text" ng-model="name" ng-keyup="displayNumeric()">
+            </div>
+            <div>Total numeric value of your name is: {{totalValue}}</div>
+        </div>
+    </div>
+    <div ng-hide="true" ng-controller="DependencyInjectionController">
+        <input type="text" ng-model="name" ng-blur="upper()">
+    </div>
+    <div ng-controller="MsgController">
+        <div>
+            <button ng-click="feedMike()">Feed Mike</button>
+            <br>
+            <h2 ng-class="stateOfBeing">Mike's State</h2>
+        </div>
+    </div>
 </body>
+
 </html>
